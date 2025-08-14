@@ -1,0 +1,3 @@
+[submodule "modules/cluster/avm-patterns/avm-ptn-aks-production"]
+	path = modules/cluster/avm-patterns/avm-ptn-aks-production
+	url = https://github.com/karectl/terraform-azurerm-avm-ptn-aks-production.git

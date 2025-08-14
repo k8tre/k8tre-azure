@@ -1,0 +1,24 @@
+site_name: K8TRE Azure Documentation
+theme:
+  name: material
+
+nav:
+  - Introduction: index.md
+  - Getting Started: overview.md
+  - Technical Guides:
+      - Landing Zone: landing_zone.md
+      - Public Gateway: public_gateway.md
+  - Modules:
+      - Cluster: terraform/modules/cluster/overview.md
+      - Cluster DNS: terraform/modules/cluster-dns/overview.md
+      - Internal Gateway: terraform/modules/cluster-gateway/overview.md
+      - GitOps (ArgoCD): terraform/modules/cluster-gitops/overview.md
+      - Managed Argo Clusters: terraform/modules/cluster-argocd/overview.md
+      - Networking: terraform/modules/infra-network/overview.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+
+# plugins:
+#    - glightbox

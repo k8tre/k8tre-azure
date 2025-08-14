@@ -1,0 +1,194 @@
+name: Shared Terraform
+
+on:
+  workflow_call:
+    inputs:
+      mode:
+        required: true
+        type: string
+        default: "plan"
+      working_directory:
+        required: true
+        type: string
+      tfvar:
+        required: false
+        type: string
+      backend_key:
+        required: true
+        type: string
+      comment_title:
+        required: true
+        type: string
+      ARM_USE_MSI:
+        required: true
+        type: string
+      ARM_SUBSCRIPTION_ID:
+        required: true
+        type: string
+      ARM_TENANT_ID:
+        required: true
+        type: string
+      ARM_CLIENT_ID:
+        required: true
+        type: string
+      entra_state:
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      ARM_CLIENT_SECRET_ENTRA:
+        required: false
+env:
+  tf_version: '1.11.4'
+  tg_version: '0.77.22'
+  working_dir: 'envs'
+jobs:
+  terraform_plan:
+    name: Plan
+    runs-on: [self-hosted, Linux, X64]
+    env:
+      ARM_USE_MSI: ${{ inputs.ARM_USE_MSI}}
+      ARM_SUBSCRIPTION_ID: ${{ inputs.ARM_SUBSCRIPTION_ID}}
+      ARM_TENANT_ID: ${{ inputs.ARM_TENANT_ID}}
+      ARM_CLIENT_ID: ${{ inputs.ARM_CLIENT_ID}}
+      ARM_CLIENT_SECRET_ENTRA: ${{ secrets.ARM_CLIENT_SECRET_ENTRA}}
+    defaults:
+      run:
+        working-directory: ${{ inputs.working_directory }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+         submodules: recursive
+
+      - name: Terraform Init
+        run: |
+          if [ ${{ inputs.entra_state}} == "true" ]; then
+            echo "Entra State detected"
+            export ARM_USE_MSI=false
+            export ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET_ENTRA
+          fi
+
+          terraform init -backend-config="resource_group_name=rg-kare-iac-core" -backend-config="storage_account_name=stkareiacstate" -backend-config="container_name=tfstate" -backend-config="key=${{ inputs.backend_key }}"
+
+      
+      - name: Terragrunt Init
+        uses: gruntwork-io/terragrunt-action@v2
+        with:
+          tf_version: ${{ env.tf_version }}
+          tg_version: ${{ env.tg_version }}
+          tg_dir: ${{ env.working_dir }}
+          tg_command: 'init'
+
+      - name: Terraform Plan
+        if: inputs.mode == 'plan' || inputs.mode == 'plan_and_apply'
+        run: |
+          if [ ${{ inputs.entra_state}} == "true" ]; then
+            echo "Entra State detected"
+            export ARM_USE_MSI=false
+            export ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET_ENTRA
+          fi
+
+          terraform plan -parallelism=1 -var-file=${{ inputs.tfvar }} -out=tfplan.binary
+          terraform show -no-color tfplan.binary > tfplan.txt
+
+      - name: Upload Plan
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: tfplan-${{ inputs.comment_title }}
+          path: tfplan.txt
+
+      - name: Comment Plan on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const plan = fs.readFileSync('${{ inputs.working_directory }}/tfplan.txt', 'utf8');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `### Terraform Plan Output for \`${{ inputs.comment_title }}\`\n\n\`\`\`\n${plan}\n\`\`\``
+            });
+
+  terraform_apply:
+    name: Apply
+    runs-on: [self-hosted, Linux, X64]
+    if: inputs.mode == 'plan_and_apply'
+    env:
+      ARM_USE_MSI: ${{ inputs.ARM_USE_MSI}}
+      ARM_SUBSCRIPTION_ID: ${{ inputs.ARM_SUBSCRIPTION_ID}}
+      ARM_TENANT_ID: ${{ inputs.ARM_TENANT_ID}}
+      ARM_CLIENT_ID: ${{ inputs.ARM_CLIENT_ID}}
+      ARM_CLIENT_SECRET_ENTRA: ${{ secrets.ARM_CLIENT_SECRET_ENTRA}}
+    environment: prod
+    defaults:
+      run:
+        working-directory: ${{ inputs.working_directory }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+         submodules: recursive
+
+      - name: Terraform Init
+        run: |
+          if [ ${{ inputs.entra_state}} == "true" ]; then
+            echo "Entra State detected"
+            export ARM_USE_MSI=false
+            export ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET_ENTRA
+          fi
+
+          terragrunt init
+      - name: Terraform Apply
+        run: |
+          if [ ${{ inputs.entra_state}} == "true" ]; then
+            echo "Entra State detected"
+            export ARM_USE_MSI=false
+            export ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET_ENTRA
+          fi
+
+          terraform apply -parallelism=1 -auto-approve -var-file=${{ inputs.tfvar }}
+  
+  terraform_destroy:
+      name: Destroy
+      runs-on: [self-hosted, Linux, X64]
+      if: inputs.mode == 'destroy'
+      env:
+        ARM_USE_MSI: ${{ inputs.ARM_USE_MSI}}
+        ARM_SUBSCRIPTION_ID: ${{ inputs.ARM_SUBSCRIPTION_ID}}
+        ARM_TENANT_ID: ${{ inputs.ARM_TENANT_ID}}
+        ARM_CLIENT_ID: ${{ inputs.ARM_CLIENT_ID}}
+        ARM_CLIENT_SECRET_ENTRA: ${{ secrets.ARM_CLIENT_SECRET_ENTRA}}
+      environment: prod
+      defaults:
+        run:
+          working-directory: ${{ inputs.working_directory }}
+
+      steps:
+        - uses: actions/checkout@v4
+          with:
+           submodules: recursive
+
+        - name: Terraform Init
+          run: |
+            if [ ${{ inputs.entra_state}} == "true" ]; then
+              echo "Entra State detected"
+              export ARM_USE_MSI=false
+              export ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET_ENTRA
+            fi
+
+            terraform init -backend-config="resource_group_name=rg-kare-iac-core" -backend-config="storage_account_name=stkareiacstate" -backend-config="container_name=tfstate" -backend-config="key=${{ inputs.backend_key }}"
+
+        - name: Terraform Destroy
+          run: |
+            if [ ${{ inputs.entra_state}} == "true" ]; then
+              echo "Entra State detected"
+              export ARM_USE_MSI=false
+              export ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET_ENTRA
+            fi
+
+            terraform destroy -parallelism=1 -auto-approve -var-file=${{ inputs.tfvar }}

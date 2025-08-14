@@ -1,0 +1,61 @@
+name: K8TRE Azure Deployment
+
+on:
+    workflow_dispatch:
+      inputs:
+        mode:
+          description: "Terragrunt Execution Mode"
+          required: true
+          default: "plan"
+          type: choice
+          options:
+            - refresh
+            - plan
+            - apply
+            - destroy
+jobs:
+  terragrunt:
+    name: Terragrunt ${{ github.event.inputs.mode }}
+    runs-on: [self-hosted, Linux, X64]
+    env:
+        ARM_USE_MSI: false
+        TF_VAR_SPN_CLIENT_SECRET: ${{ secrets.SPN_CLIENT_SECRET }}
+        #ARM_SUBSCRIPTION_ID: ${{ vars.ARM_SUBSCRIPTION_ID}}
+        #ARM_TENANT_ID: ${{ vars.ARM_TENANT_ID}}
+        #ARM_CLIENT_ID: ${{ vars.ARM_CLIENT_ID}}
+    environment: prod
+    defaults:
+        run:
+          working-directory: envs
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+         submodules: recursive
+
+      - name: Setup Kubelogin
+        uses: azure/use-kubelogin@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: kubelogin Version
+        run: which kubelogin && kubelogin --version
+
+      - uses: azure/login@v2
+        with:
+          #allow-no-subscriptions: true
+          creds: ${{ secrets.SPN_CREDS }}
+
+      - name: Setup Terragrunt
+        uses: autero1/action-terragrunt@v3
+        with:
+          terragrunt-version: 0.77.22
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Terragrunt ${{ github.event.inputs.mode }}
+        run: |
+          if [[ "${{ github.event.inputs.mode }}" == "apply" || "${{ github.event.inputs.mode }}" == "destroy" ]]; then
+            terragrunt run --all --log-level trace --non-interactive -- ${{ github.event.inputs.mode }}
+          else
+            terragrunt run --all --log-level debug -- ${{ github.event.inputs.mode }}
+          fi
