@@ -1,0 +1,1118 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../landing_zone/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Getting Started - K8TRE Azure Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#k8tre-infrastrucutre-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="K8TRE Azure Documentation" class="md-header__button md-logo" aria-label="K8TRE Azure Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            K8TRE Azure Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="K8TRE Azure Documentation" class="md-nav__button md-logo" aria-label="K8TRE Azure Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    K8TRE Azure Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#karectl" class="md-nav__link">
+    <span class="md-ellipsis">
+      KARECTL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k8tre-azure-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      K8TRE-Azure Infrastructure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="K8TRE-Azure Infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modules-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules &amp; Dependencies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modules &amp; Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modules-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules &amp; Resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Completion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Technical Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Technical Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../landing_zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Landing Zone
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../public_gateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Public Gateway
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/modules/cluster/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/modules/cluster-dns/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cluster DNS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/modules/cluster-gateway/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Internal Gateway
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/modules/cluster-gitops/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GitOps (ArgoCD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/modules/cluster-argocd/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Managed Argo Clusters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/modules/infra-network/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#karectl" class="md-nav__link">
+    <span class="md-ellipsis">
+      KARECTL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k8tre-azure-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      K8TRE-Azure Infrastructure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="K8TRE-Azure Infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modules-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules &amp; Dependencies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modules &amp; Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modules-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules &amp; Resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Completion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="k8tre-infrastrucutre-guide">K8TRE Infrastrucutre Guide</h1>
+<h2 id="overview">Overview</h2>
+<p>As a K8TRE prerequsite, a base infrastructure must be provisioned that incorporates a small number of resources required to operate K8TRE within your organisation:</p>
+<ul>
+<li><strong>CNCF Kubernetes Distribution</strong><ul>
+<li>Private cluster configuration</li>
+<li>Secure compute (nodepool)</li>
+</ul>
+</li>
+<li><strong>Networking</strong><ul>
+<li>L4 &amp; L7 (Application Layer) traffic routing</li>
+<li>Private &amp; public DNS management</li>
+<li>Hub-spoke topology</li>
+<li>K8s control plane &amp; nodepool private endpoints</li>
+<li>Restricted public ingress (Public Gateway) </li>
+</ul>
+</li>
+<li><strong>ArgoCD</strong> for managing the provision of K8TRE K8s services     </li>
+<li><strong>Storage</strong> to support secure workspaces and core shared services</li>
+</ul>
+<p>This guide provides early details of a reference infrastructure developed by LTH for operating K8TRE on Azure Cloud.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This IaC project is in alpha-stage development and is designed to support the deployment of <a href="https://github.com/k8tre/k8tre">K8TRE MVP</a> on Azure. Beware, K8TRE-Azure IaC requires a specified hub-spoke landing zone designed for LTH requirements.</p>
+</div>
+<h3 id="karectl">KARECTL</h3>
+<p>KARECTL represents LTH's implementation of K8TRE within the organisation's existing digital ecosystem. KARECTL comprises three layers: </p>
+<p><img alt="KARECTL Layers &amp; Components" src="../assets/k8tre-azure/karectl-arch.png" /></p>
+<ul>
+<li>
+<p><strong>Landing Zone</strong> - represents a landing zone in Azure based on a hub-spoke design pattern that provides a private networking topology, governance (i.e. EntraID, Azure Policy) and key security (i.e. Azure Firewall) resources. For more information, see <a href="../landing_zone/">here</a>.</p>
+</li>
+<li>
+<p><strong>K8TRE-Azure Infrastructure</strong> - provides Azure-specific and in-cluster resources (e.g. AKS, ArgoCD, Cilium BYO CNI) required to enable the deployment, operation and continued development of K8TRE. In particular, KARECTL implements K8TRE following a promotion-based development and deployment pattern to better support continuous integration and delivery (CICD) processes for TRE developers.</p>
+</li>
+<li>
+<p><strong>K8TRE</strong> comprises K8TRE's in-cluster agnostic services (e.g. DNS, storage, TLS management) and core applications (i.e. jupyterhub, cr8tor) that are deployed and maintained via a declarative GitOps approach based on ArgoCD's management cluster model (however it is also possible to deploy K8TRE following a ArgoCD per Cluster model). Note that organisation's are expected to fork the <a href="https://github.com/k8tre/k8tre">K8TRE repository</a> and configure a chosen ArgoCD instance as its primary repository.</p>
+</li>
+</ul>
+<h3 id="k8tre-azure-infrastructure">K8TRE-Azure Infrastructure</h3>
+<p>A recipe for the infrastructure resources required to deploy K8TRE MVP on Azure is provided <a href="https://">here</a>. The IaC (Terragrunt/Terraform) deploys K8TRE dependent resources within the underlying 'landing zone' set up at LTH. Following a Terragrunt stacks approach to organise and manage Terraform modules (resources) that have dependencies between them, the project deploys three core stacks of resources:
+- The <strong>Network Services</strong> stack provisions specific networking resources (e.g. Azure App Gateway, Private DNS Zones, Public IPs) that must be established prior to provisioning K8TRE clusters
+- The <strong>K8TRE Management</strong> stack creates an AKS cluster that acts as the management control plane for all other target K8TRE clusters (i.e. development, staging, production). It installs ArgoCD and automates the set up of secure connections to all other external K8TRE clusters defined as separate stacks (i.e. see dev, stg and prd stacks in the envs/ directory)
+- <strong>K8TRE Cluster</strong> a K8TRE cluster stack signals the creation of a AKS cluster that includes the installation of Cilium as the default CNI, ArgoCD service accounts and Gateway API CRDs. In addition to the AKS cluster, the stack creates supporting resources that include an Azure KeyVault, Storage Account and Application IDs (+ Managed Identities) that allow K8TRE agnostic services (e.g. external-dns) to leverage AKS-enabled OIDC <a href="https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation">Workload Identify Federation</a> to avoid the need for k8s services to manage secrets.</p>
+<h4 id="modules-dependencies">Modules &amp; Dependencies</h4>
+<p>Each stack specifies which of the following terraform modules (and associated resources) are deployed into the Azure landing zone:</p>
+<ul>
+<li><strong>cluster</strong> deploys AKS clusters with networking, storage, and security</li>
+<li><strong>cluster-dns</strong> sets up DNS management with ExternalDNS</li>
+<li><strong>cluster-gateway</strong> configures internal Gateway with Cilium CNI</li>
+<li><strong>cluster-gitops</strong> deploys ArgoCD with Azure AD integration into management cluster</li>
+<li><strong>cluster-argocd</strong> configures target k8TRE clusters to be managed by the ArgoCD management cluster</li>
+<li><strong>infra-network</strong> creates shared networking and external Application Gateway</li>
+</ul>
+<h5 id="modules-resources">Modules &amp; Resources</h5>
+<p>This section outlines the high-level resources each module manages. For a full listing of modules and resources see detailed documentation under the Modules tab.</p>
+<ul>
+<li><a href="../terraform/modules/cluster/overview/">Cluster</a> module establishes a target private AKS cluster for K8TRE.<ul>
+<li><strong>Core Infrastructure</strong><ul>
+<li>Resource Group - Container for all AKS cluster resources</li>
+<li>User Assigned Managed Identity - Identity for the AKS cluster</li>
+</ul>
+</li>
+<li><strong>Networking &amp; DNS</strong><ul>
+<li>Private DNS Zone Virtual Network Link (i.e. Links AKS private DNS zone to spoke network)</li>
+</ul>
+</li>
+<li><strong>Private AKS Cluster (via Azure Verified Module)</strong><ul>
+<li>BYO CNI (i.e. no CNI plugin)</li>
+<li>Single workload node pool (Standard_D2d_v5)</li>
+<li>Private DNS zone integration</li>
+<li>AAD RBAC integration (associated with prerequiste EntraID admin group)</li>
+</ul>
+</li>
+<li><strong>Storage Infrastructure</strong><ul>
+<li>Azure Storage Account (Two for workspaces and core cluster storage requirements)</li>
+<li>Role Assignments (i.e. Storage Blob Data Contributor, Key Vault Secrets Officer etc)</li>
+</ul>
+</li>
+<li><strong>Private Endpoints</strong> (for storage accounts + keyvault)</li>
+<li><strong>Key Vault</strong> for cluster secrets storage</li>
+</ul>
+</li>
+<li><a href="../terraform/modules/cluster-dns/overview/">external-dns</a> module includes resources to enable external-dns agnostic service in K8TRE to intergate with Azure Private DNS<ul>
+<li><strong>User Assigned Managed Identity</strong> - For ExternalDNS workload identity</li>
+<li><strong>Federated Identity Credential</strong> - Links Kubernetes service account to Azure identity</li>
+<li><strong>Private DNS Zone</strong> - Custom domain for the cluster</li>
+<li><strong>Private DNS Zone Virtual Network Link</strong> - Links DNS zone to hub network</li>
+<li><strong>Role Assignment</strong> - Grants ExternalDNS identity "Private DNS Zone Contributor" permissions</li>
+</ul>
+</li>
+<li><a href="../terraform/modules/cluster-gateway/overview/">cluster-gateway</a> module to support K8TRE agnostic internal gateway service<ul>
+<li><strong>Gateway API CRDs</strong> - Installation of Custom Resource Definitions for Gateway API (GatewayClasses, Gateways, HTTPRoutes, ReferenceGrants, GRPCRoutes) into the cluster</li>
+<li><strong>Cilium CNI (with Gateway API)</strong> installed via Helm Release resource</li>
+</ul>
+</li>
+<li><a href="../terraform/modules/cluster-gitops/overview/">cluster-gitops</a> module deploys argocd into a management AKS cluster<ul>
+<li><strong>Azure AD Resources</strong><ul>
+<li>Azure AD Application - ArgoCD application registration with OAuth permissions</li>
+<li>Service Principal - Service identity for the ArgoCD application</li>
+<li>Federated Identity Credential - Links Kubernetes service account to Azure AD application</li>
+</ul>
+</li>
+<li><strong>ArgoCD Namespace</strong></li>
+<li><strong>ArgoCD Helm Release</strong> - configured with Azure AD OIDC integration and RBAC policies</li>
+</ul>
+</li>
+<li><a href="../terraform/modules/cluster-argocd/overview/">cluster-argocd</a> module configures ArgoCD to manage external Kubernetes clusters (dev and staging) by creating service accounts with cluster-admin permissions and registering the clusters with appropriate labels for GitOps automation<ul>
+<li><strong>ArgoCD Clusters</strong> (i.e. dev, stg, prd)</li>
+<li><strong>ArgoCD Service</strong> Account, Secret &amp; Role Binding (per managed Cluster)</li>
+</ul>
+</li>
+<li><a href="../terraform/modules/infra-network/overview/">infra-network</a> module creates network infrastructure and an Application Gateway that serves as the external entry point for the k8tre platform across multiple environments<ul>
+<li><strong>DNS Infrastructure</strong><ul>
+<li>Private DNS Zone - AKS private endpoint DNS zone (privatelink.uksouth.azmk8s.io)</li>
+<li>Private DNS Zone Virtual Network Links (2x) - Links DNS zone to hub and IAC spoke networks</li>
+</ul>
+</li>
+<li><strong>Application Gateway Infrastructure</strong><ul>
+<li>Public IP - Static IP for Application Gateway with domain label</li>
+<li>Application Gateway - Standard_v2 tier with HTTPS listeners, backend pools, and SSL termination</li>
+</ul>
+</li>
+<li><strong>Azure App Gateway</strong><ul>
+<li>SSL Certificate - Embedded PFX certificate for HTTPS</li>
+<li>HTTP Listeners - Dev, staging, and production HTTPS listeners</li>
+<li>Backend Pools - Target cluster gateways for each environment</li>
+<li>Health Probes - HTTPS health checks for backend services</li>
+<li>Rewrite Rule Sets - host header and location rewriting for K8TRE services (e.g. Jupyterhub, DataShield)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="dependencies">Dependencies</h5>
+<p>The project ensures proper dependency management and sequential deployment across each environment within the KARECTL ecosystem.</p>
+<p><img align="left" alt="K8TRE-Azure Dependency Graph" src="../assets/k8tre-azure/graph.png" /></p>
+<h2 id="infrastructure-deployment">Infrastructure Deployment</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Ensure a 'landing zone' is already deployed to an Azure tenant that follows the hub-spoke pattern and resource design implemented by LTH. For more information on LTH's landing zone <a href="../landing_zone/">see here</a> </li>
+</ul>
+<h3 id="configuration">Configuration</h3>
+<p>Before applying this K8TRE infrastructure recipe for Azure, first ensure the root.hcl terragrunt file (in the envs/ directory) includes the following global variables:</p>
+<pre><code class="language-bash">locals {
+    region                                           = &quot;uksouth&quot;
+    cluster_name                                     = &quot;k8tre&quot;
+    azure_k8tre_mgmt_cluster_subscription_id         = &quot;6810437b-9cbb-40f4-89d8-a9b98f3de028&quot;
+    azure_k8tre_dev_cluster_subscription_id          = &quot;02b2c397-edb6-476f-b3a4-aa63e0621c53&quot;
+    azure_tenant_id                                  = &quot;30a82846-a29e-4b6b-af27-9b19418ee1b3&quot;
+    azure_k8tre_connectivity_subscription_id         = &quot;443fc06f-050e-4794-83d8-eaeee691d453&quot;
+    azure_k8tre_stg_cluster_subscription_id          = &quot;4e83168f-6204-4255-b1c0-9042c6fe5afd&quot;
+    azure_k8tre_mgmt_subscription_id                 = &quot;db3e5dae-c030-44df-8205-c512d0195e0e&quot;
+    argocd_admin_password                            = &quot;XXX&quot; # Set in Github Secrets  &amp; get via get_env()
+    entra_admin_group_id                             = &quot;8495e6fa-3c66-403b-abfe-227062b5d9d0&quot;  
+}
+
+generate &quot;backend&quot; {
+  path      = &quot;backend.tf&quot;
+  if_exists = &quot;overwrite_terragrunt&quot;
+  contents = &lt;&lt;EOF
+    terraform {
+        backend &quot;azurerm&quot; {
+            resource_group_name   = &quot;rg-kare-iac-core&quot;
+            storage_account_name  = &quot;stkareiacstate&quot;
+            container_name        = &quot;tfstate&quot;
+            key                   = &quot;${path_relative_to_include()}/k8tre.tfstate&quot;
+        }
+    }
+EOF
+
+}
+</code></pre>
+<p>The K8TRE-Azure components are deployed across multiple Azure subscriptions for environment isolation. See the subscription structure defined in the landing zone project <a href="../landing_zone/">here</a> and set each subscription ID accordingly. Furthermore, this configuration defines a remote Terraform backend for state management stored within a storage account defined within the landing zone layer. Adjust this configuration to your preferred state management approach.</p>
+<h3 id="installation">Installation</h3>
+<ul>
+<li>Fork the K8TRE-Azure project to your organisation github (or clone if deploying locally)</li>
+<li>Login to Azure Cloud:</li>
+</ul>
+<pre><code class="language-bash">az login
+</code></pre>
+<ul>
+<li>Ensure your az account has the nessasary roles to access each landing zone subscription. Also note, in the current pre-alpha version K8TRE MVP, references to certain resources (e.g. VNETs) may still have hardcoded references:</li>
+</ul>
+<pre><code class="language-bash">az account list --output table
+Name                   CloudName    SubscriptionId                        TenantId                              State    IsDefault
+---------------------  -----------  ------------------------------------  ------------------------------------  -------  -----------
+sub-kare-data          AzureCloud   ea2c7765-31d3-4c3f-aea3-b491555ac5c1  30a82846-a29e-4b6b-af27-9b19418ee1b3  Enabled  False
+sub-kare-dev           AzureCloud   02b2c397-edb6-476f-b3a4-aa63e0621c53  30a82846-a29e-4b6b-af27-9b19418ee1b3  Enabled  False
+sub-kare-staging       AzureCloud   4e83168f-6204-4255-b1c0-9042c6fe5afd  30a82846-a29e-4b6b-af27-9b19418ee1b3  Enabled  True
+sub-kare-production    AzureCloud   d466592d-46fb-432e-9b10-5fc47c2c5cc9  30a82846-a29e-4b6b-af27-9b19418ee1b3  Enabled  False
+sub-kare-k8sman        AzureCloud   6810437b-9cbb-40f4-89d8-a9b98f3de028  30a82846-a29e-4b6b-af27-9b19418ee1b3  Enabled  False
+sub-kare-connectivity  AzureCloud   443fc06f-050e-4794-83d8-eaeee691d453  30a82846-a29e-4b6b-af27-9b19418ee1b3  Enabled  False
+sub-kare-identity      AzureCloud   960d029d-b784-4cee-b834-6ec1903f968a  30a82846-a29e-4b6b-af27-9b19418ee1b3  Enabled  False
+sub-kare-management    AzureCloud   db3e5dae-c030-44df-8205-c512d0195e0e  30a82846-a29e-4b6b-af27-9b19418ee1b3  Enabled  False
+sub-kare-iac           AzureCloud   d72c48dc-0c7f-4fac-8ce7-fc451e32632b  30a82846-a29e-4b6b-af27-9b19418ee1b3  Enabled  False
+</code></pre>
+<ul>
+<li>Set the working directory to the envs/ directory in the project that contains the terragrunt configuration stacks:</li>
+<li>Do a dry run to check the current state of your Azure infrastructure (i.e. target landing zone) and terragrunt dependency graph across each stack in envs/:</li>
+</ul>
+<pre><code class="language-bash">terragrunt run --all --log-level trace --non-interactive -- plan
+</code></pre>
+<ul>
+<li>If successful, apply the execution plan:</li>
+</ul>
+<pre><code class="language-bash">terragrunt run --all --log-level trace --non-interactive -- apply
+</code></pre>
+<h3 id="completion">Completion</h3>
+<p>If you have configured the terragrunt to deploy multiple K8TRE-ready AKS clusters (e.g. dev, stg and prd environments), expect for the apply to complete between 20-25 minutes. Once deployed, verify that the clusters are healthy:
+- Get credentials for a deployed cluster e.g.:</p>
+<pre><code class="language-bash">az aks get-credentials --resource-group rg-k8tre-stg-uks-aks --name aks-k8tre-stg-cluster
+</code></pre>
+<ul>
+<li>Verify pods are healthy i.e., particularly cilium pods:</li>
+</ul>
+<pre><code class="language-bash">kubectl get pods -A | grep cilium
+
+kube-system         cilium-envoy-2hhnk                                    1/1     Running   0                 36d
+kube-system         cilium-envoy-jr5h2                                    1/1     Running   0                 36d
+kube-system         cilium-jwf24                                          1/1     Running   0                 18d
+kube-system         cilium-lqz66                                          1/1     Running   0                 18d
+kube-system         cilium-operator-598648997c-brvfn                      1/1     Running   0                 36d
+kube-system         cilium-operator-598648997c-d9hwx                      1/1     Running   0                 36d
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>
